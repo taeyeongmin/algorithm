@@ -14,6 +14,7 @@ public class Q1 {
         int no = 4;
 
         System.err.println("결과 : "+factorial(no));
+//        System.err.println("결과 : "+factorialStack(no));
     }
 
     public static int factorialStack(int n){
@@ -36,13 +37,15 @@ public class Q1 {
         if(n > 0){
             int recursiveResult = factorial(n - 1);
             int result = n * recursiveResult;
-            System.out.println("factorial(" + n + ") = " + n + " * factorial(" + (n-1) + ") = " + result);
+            System.out.println("factorial(" + n + ") = " + n + " * factorial(" + (n-1) + ") = " + result +", "+recursiveResult);
             return result;
         }else{
             return 1;
         }
 
     }
+
+    // 4 * (3 * f(2))
 
 //    factorial(5)
 //            = 5 * factorial(4)
@@ -54,5 +57,5 @@ public class Q1 {
 //            = 120
 
 
-
-}
+    //
+    }
