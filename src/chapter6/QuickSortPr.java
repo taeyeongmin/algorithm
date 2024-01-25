@@ -13,7 +13,8 @@ public class QuickSortPr {
 
     static int cnt = 0;
     public static void main(String[] args){
-        int []arr = {1,8,7,4,5,2,6,3,9};
+//        int []arr = {1,8,7,4,5,2,6,3,9};
+        int []arr = {5,8,4,2,6,1,3,9,7};
         int count = 9;
 
         quickSortPr(arr,count);
@@ -26,19 +27,22 @@ public class QuickSortPr {
         int x = arr[n/2]; // 피버 값
 
         do {
+
+            while (arr[pl] < x) pl++;
+            while (arr[pr] > x) pr--;
+
+            if(pl <= pr){
+                swap(arr,pl++,pr--); // 교환을 했으니 다음 인덱스로 이동해야 함.
+            }
+
             for(int a: arr){
                 System.out.print(a+",");
             }
             System.out.println();
             System.out.println("================");
 
-            if(arr[pl] < x) pl++;
-            if(arr[pr] > x) pr--;
-
-            if(pl <= pr){
-                swap(arr,pl++,pr--); // 교환을 했으니 다음 인덱스로 이동해야 함.
-            }
         }while (pl <= pr);
+
     }
 
     static void swap(int [] arr, int idx1, int idx2){
